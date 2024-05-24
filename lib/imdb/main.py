@@ -4,7 +4,7 @@ import http.client
 import json
 
 app = Flask(__name__)
-APIKEY = '64L8XBqhtD9iRjdYaabsle:04fcEu8a5AiKiPcCxLM0VF'
+APIKEY = 'YourApiKey'
 
 def get_imdb_id(movie_name, year):
     conn = http.client.HTTPSConnection("api.collectapi.com")
