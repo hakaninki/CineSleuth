@@ -27,53 +27,71 @@ CineSleuth is a Flutter-based movie discovery application that fetches and displ
 
 ### Installation
 
-1. Clone the repository:
+#### 1. Clone the repository:
 
 ```bash
 git clone https://github.com/your-username/cinesleuth.git
 cd cinesleuth
-2. Set up the Flutter app:
+```
+
+#### 2. Set up the Flutter app:
+```bash
 cd flutter_app
 flutter pub get
-3. Set up the Flask backend:
+```
+#### 3. Set up the Flask backend:
+```bash
 cd backend
 pipenv install
+```
 
-Running the Application
-Flutter App
+### Running the Application
+#### Flutter App
   1. Navigate to the Flutter app directory:
-    cd flutter_app
+```bash
+cd flutter_app
+```
   2. Run the Flutter app:
+```bash
     flutter run
-Flask Backend
+```
+#### Flask Backend
   1. Navigate to the backend directory:
-    cd backend
+```bash
+cd backend
+```
   2. Start the Flask server:
-    pipenv run python app.py
-Configuration
+```bash
+pipenv run python app.py
+```
+### Configuration
 Create a constants.dart file in the lib directory of the Flutter app to store your API keys and other constants:
+```dart
 class Constants {
   static const apiKey = 'YOUR_TMDB_API_KEY';
   static const imagePath = 'https://image.tmdb.org/t/p/w500/';
 }
+```
 Replace YOUR_TMDB_API_KEY with your actual TMDb API key.
 
-API Endpoints
-Get Reviews
-Endpoint: /getReviews
+### API Endpoints
+#### Get Reviews
+Endpoint: **/getReviews**
 
-Method: GET
+Method: **GET**
 
 Query Parameters:
 
-name (string): The name of the movie.
-year (string): The release year of the movie.
-Example Request:
+**name** (string): The name of the movie.
+**year** (string): The release year of the movie.
+##### Example Request:
+```bash
 http://127.0.0.1:5000/getReviews?name=Inception&year=2010
+```
 
-Acknowledgements:
--Flutter
--Flask
--The Movie Database (TMDb) API
--IMDb Cinemagoer
--CollectAPI
+## Acknowledgements:
+##### -**Flutter**
+##### -**Flask**
+##### -**The Movie Database (TMDb) API**
+##### -**IMDb Cinemagoer**
+##### -**CollectAPI**
