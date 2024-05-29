@@ -20,7 +20,9 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Extract the release year from the movie's release date
     final releaseYear = movie.releaseDate.substring(0, 4);
+    // Replace spaces with '%' in the movie title for the API request
     final movieTitleWithoutSpaces = movie.title.replaceAll(' ', '%');
 
     return Scaffold(
@@ -142,6 +144,7 @@ class DetailsScreen extends StatelessWidget {
               ),
             ),
           ),
+          // Section for displaying IMDb reviews
           SliverToBoxAdapter(
             child: FutureBuilder<List<Map<String, dynamic>>>(
               future: Api().getReviews(movieTitleWithoutSpaces, releaseYear),
@@ -154,6 +157,7 @@ class DetailsScreen extends StatelessWidget {
                 } else if (snapshot.hasError) {
                   return Text('Error: ${snapshot.error}');
                 } else {
+                  // Display the reviews if data is available
                   final reviews = snapshot.data ?? [];
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,6 +170,7 @@ class DetailsScreen extends StatelessWidget {
                         ),
                       ),
                       for (var review in reviews)
+                      // Display each review using the ReviewCard widget
                         ReviewCard(
                           author: review['author'] ?? 'Unknown',
                           date: review['date'] ?? 'Unknown',
