@@ -14,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // Define future variables to hold the movie lists
   late Future<List<Movie>> trendingMovies;
   late Future<List<Movie>> topRatedMovies;
   late Future<List<Movie>> upComingMovies;
@@ -21,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    // Initialize the future variables by fetching the movies from the API
     trendingMovies = Api().getTrendingMovies();
     topRatedMovies = Api().getTopRatedMovies();
     upComingMovies = Api().getUpComingMovies();
@@ -33,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Image.asset(
-          'assets/cineSleuth.png',
+          'assets/cineSleuth.png', // App logo
           fit: BoxFit.cover,
           height: 40,
           filterQuality: FilterQuality.high,
