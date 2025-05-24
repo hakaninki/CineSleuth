@@ -1,3 +1,3 @@
 # CineSleuth
 Graduation Project II
-(choose master brunch)
+(choose master branch)
